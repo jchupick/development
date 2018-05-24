@@ -1,1 +1,1 @@
-## Windows PowerSHell notes:
+## Windows PowerShell notes:
