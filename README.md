@@ -1,4 +1,4 @@
-# Repository to store my lame-ass scripting note...directories by language
+#### Repository to store my lame-ass scripting notes...directories by language
 
 - [ ] Windows batch
 - [ ] Windows PowerShell
