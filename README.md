@@ -3,10 +3,10 @@
 ### Repository to store scripts by language and scripting notes.
 
 #### Windows batch
-    powershell (curl wttr.in -UserAgent curl).content
+    powershell (curl wttr.in     -UserAgent curl).content
     powershell (curl ifconfig.co -UserAgent curl).content
 #### Windows PowerShell
-    (curl wttr.in -UserAgent curl).content
+    (curl wttr.in     -UserAgent curl).content
     (curl ifconfig.co -UserAgent curl).content
 #### Active Directory (AD)
 #### Python
