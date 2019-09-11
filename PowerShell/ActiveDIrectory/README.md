@@ -4,6 +4,7 @@ Module is **ActiveDirectory**
 #### Installation
 
     Install-WindowsFeature -Name RSAT-AD-Tools
+(NOTE: this is equivalent to using the **Turn Windows Features on or off** on the Control Panel) 
 
 ## Basic Commands
     Get-ADComputer -Filter 'Name -like "edi*"' | Select-Object Name
