@@ -1,6 +1,10 @@
 ## Summary
 Module is **ActiveDirectory**
 
+#### Installation
+
+    Install-WindowsFeature -Name RSAT-AD-Tools
+
 ## Basic Commands
     Get-ADComputer -Filter 'Name -like "edi*"' | Select-Object Name
 
