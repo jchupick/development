@@ -13,6 +13,8 @@ Same as above, except combine **-like** and **-notlike**, and also remove the **
 
     Get-ADComputer -Filter ('Name -like "edi*st-*" -and Name -notlike "edi*tst-*"') | Select-Object Name -ExpandProperty Name
 
-Query servers, filtering by \*tst\*, grabbing the IP address as well
 ## (A little more than) Basic Commands
+
+Query servers, filtering by \*tst\*, grabbing the IP address as well
+
     Get-ADComputer -Filter 'Name -like "*tst*"' -Properties IPv4Address | Sort-Object -Property DNSHostName | Select-Object DNSHostName,IPv4Address | Format-Table
