@@ -11,3 +11,10 @@ https://gallery.technet.microsoft.com/scriptcenter
 
 #### Sample input file:
     SlackChannelDump.json
+
+### DateTime
+Get 'now' date and time and format
+    Get-Date -Format 'yyyyMMdd-HHmmss'
+Format existing DateTime object
+    $dtobject = Get-Date
+    $dtobject.ToString('yyyyMMdd HH:mm:ss')
