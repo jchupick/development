@@ -11,7 +11,7 @@ Module is **ActiveDirectory**
 
 Same as above, except combine **-like** and **-notlike**, and also remove the **Name** heading from the output using **-ExpandProperty**, creating a plain array of strings.
 
-    Get-ADComputer -Filter ('Name -like "edi*st-*" -and Name -notlike "edi*tst-*"') | Select-Object Name -ExpandProperty Name
+    Get-ADComputer -Filter ('Name -like "prd*st-*" -and Name -notlike "prd*tst-*"') | Select-Object Name -ExpandProperty Name
 
 ## (A little more than) Basic Commands
 
