@@ -9,3 +9,8 @@ Get CPU and Memory use for a process on a given server
 ```
 Get-WmiObject -ComputerName webserver-prod01 -Class Win32_PerfFormattedData_PerfProc_Process | Where-Object { $_.Name -like 'w3wp*' } |  Select-Object Name,IDProcess,PercentProcessorTime,WorkingSet
 ```
+
+Total and Free Memory on a Server
+```
+Get-WmiObject -ComputerName ediomspd-db01 -Class Win32_OperatingSystem | Select-Object PSComputerName,FreePhysicalMemory,TotalVisibleMemorySize
+```
