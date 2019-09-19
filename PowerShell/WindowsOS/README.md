@@ -12,5 +12,9 @@ Get-WmiObject -ComputerName webserver-prod01 -Class Win32_PerfFormattedData_Perf
 
 Total and Free Memory on a Server
 ```
-Get-WmiObject -ComputerName ediomspd-db01 -Class Win32_OperatingSystem | Select-Object PSComputerName,FreePhysicalMemory,TotalVisibleMemorySize
+Get-WmiObject -ComputerName webserver-prod01 -Class Win32_OperatingSystem | Select-Object PSComputerName,FreePhysicalMemory,TotalVisibleMemorySize
+```
+Similar, but using different WMI Class
+```
+Get-WmiObject -ComputerName webserver-prod01 -Class Win32_PerfFormattedData_PerfOS_Memory | Select-Object PSComputerName,CommittedBytes,AvailableBytes
 ```
