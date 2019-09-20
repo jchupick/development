@@ -1,4 +1,4 @@
-### Useful Commands
+### WMI and System Info Queries
 One-liner to get a service by name, get the associated proceess, and find out what it's start time was
 
 ```
@@ -17,4 +17,8 @@ Get-WmiObject -ComputerName webserver-prod01 -Class Win32_OperatingSystem | Sele
 Similar, but using different WMI Class
 ```
 Get-WmiObject -ComputerName webserver-prod01 -Class Win32_PerfFormattedData_PerfOS_Memory | Select-Object PSComputerName,CommittedBytes,AvailableBytes
+```
+### Windows EventLog Queries
+```
+Get-EventLog -ComputerName localhost -LogName System | Where-Object { ($_.TimeWritten -gt '2019-05-19') -and ($_.Source -like 'S*') -and ($_.EntryType -like 'Error') }
 ```
