@@ -26,7 +26,7 @@ $dtobject.ToString('yyyyMMdd HH:mm:ss')
 
 Convert WMI FOrmatted Date and Time to DateTime object
 ```
-$pid = 6620
-$wmiobj         = Get-WmiObject -Class win32_Process -ComputerName webserver-prod01 | Where-Object { $_.ProcessId -eq $pid }
+$mypid = 6620
+$wmiobj         = Get-WmiObject -Class Win32_Process -ComputerName webserver-prod01 | Where-Object { $_.ProcessId -eq $mypid }
 $newdatetimeobj = $wmiobj.ConvertToDateTime($wmiobj.CreationDate)
 ```
