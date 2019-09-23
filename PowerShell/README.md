@@ -23,3 +23,9 @@ Format existing DateTime object
 $dtobject = Get-Date
 $dtobject.ToString('yyyyMMdd HH:mm:ss')
 ```
+
+Convert WMI FOrmatted Date and Time to DateTime object
+```
+$wmiobj         = Get-WmiObject -Class win32_Process -ComputerName EDIOMSPD-DB02 | Where-Object { $_.ProcessId -eq 6620 }
+$newdatetimeobj = $wmiobj.ConvertToDateTime($wmiobj.CreationDate)
+```
