@@ -7,7 +7,7 @@ One-liner to get a service by name, get the associated proceess, and find out wh
 
 Get CPU and Memory use for a process on a given server
 ```
-Get-WmiObject -ComputerName webserver-prod01 -Class Win32_PerfFormattedData_PerfProc_Process | Where-Object { $_.Name -like 'w3wp*' } |  Select-Object Name,IDProcess,PercentProcessorTime,WorkingSet
+Get-WmiObject -ComputerName webserver-prod01,webserver-prod02 -Class Win32_PerfFormattedData_PerfProc_Process | Where-Object { $_.Name -like 'w3wp*' } |  Select-Object PSComputerName,Name,IDProcess,PercentProcessorTime,WorkingSet
 ```
 
 Total and Free Memory on a Server
