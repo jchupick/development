@@ -30,3 +30,12 @@ $mypid = 6620
 $wmiobj         = Get-WmiObject -Class Win32_Process -ComputerName webserver-prod01 | Where-Object { $_.ProcessId -eq $mypid }
 $newdatetimeobj = $wmiobj.ConvertToDateTime($wmiobj.CreationDate)
 ```
+
+Convert String Date/Times to DateTime objects
+
+```
+$SYS_OBJECT = Get-WmiObject Win32_OperatingSystem
+$SYS_OBJECT.ConvertToDateTime($SYS_OBJECT.ConvertFromDateTime('2019-09-24 23:00'))
+
+Tuesday, September 24, 2019 11:00:00 PM
+```
