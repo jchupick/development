@@ -11,6 +11,12 @@ Total and Free Memory on a Server
 ```
 Get-WmiObject -ComputerName webserver-prod01 -Class Win32_OperatingSystem | Select-Object PSComputerName,FreePhysicalMemory,TotalVisibleMemorySize
 ```
+
+Processor Information
+```
+Get-WmiObject -Class Win32_Processor -ComputerName webserver-prod01 | Select-Object -Property *
+```
+
 ### WMI Performance Counters Classes
 
 Get CPU and Memory use for a process on a given server
@@ -25,7 +31,7 @@ Get-WmiObject -ComputerName webserver-prod01 -Class Win32_PerfFormattedData_Perf
 
 Processor Information
 ```
-Get-WmiObject -Class Win32_PerfFormattedData_PerfOS_Processor -ComputerName ediomsqa-app01
+Get-WmiObject -Class Win32_PerfFormattedData_PerfOS_Processor -ComputerName webserver-prod01
 ```
 
 ### Windows EventLog Queries
