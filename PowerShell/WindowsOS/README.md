@@ -34,7 +34,7 @@ Processor Information
 Get-WmiObject -Class Win32_PerfFormattedData_PerfOS_Processor -ComputerName webserver-prod01
 ```
 
-### Windows EventLog Queries
+## Windows EventLog
 ```
 Get-EventLog -ComputerName localhost -LogName System | Where-Object { ($_.TimeWritten -gt '2019-05-19') -and ($_.Source -like 'S*') -and ($_.EntryType -like 'Error') }
 ```
