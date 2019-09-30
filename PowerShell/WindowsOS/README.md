@@ -17,6 +17,12 @@ Processor Information
 Get-WmiObject -Class Win32_Processor -ComputerName webserver-prod01 | Select-Object -Property *
 ```
 
+Basic Disk Usage Information
+```
+Get-WmiObject -Class Win32_LogicalDisk -ComputerName webserver-prod01 | Where-Object { $_.FileSystem -ne $null } | Select-Object PSComputerName,DeviceID,FileSystem,FreeSpace,Size
+
+```
+
 ### WMI Performance Counters Classes
 
 Get CPU and Memory use for a process on a given server
