@@ -13,8 +13,17 @@ Same as above, except combine **-like** and **-notlike**, and also remove the **
 
     Get-ADComputer -Filter ('Name -like "prd*st-*" -and Name -notlike "prd*tst-*"') | Select-Object Name -ExpandProperty Name
 
+### Find a Group
+
+    Get-ADGroup -Filter 'Name -like "*Jenkins*"'
+
 ## (A little more than) Basic Commands
 
 Query servers, filtering by \*tst\*, grabbing the IP address as well
 
     Get-ADComputer -Filter 'Name -like "*tst*"' -Properties IPv4Address | Sort-Object -Property DNSHostName | Select-Object DNSHostName,IPv4Address | Format-Table
+
+## AD Search without installing AD Windows Add-On
+    $surrentuser = 'jchupick'
+    (New-Object System.DirectoryServices.DirectorySearcher("(&(objectCategory=User)(samAccountName=$($currentuser)))")).FindOne().GetDirectoryEntry().memberOf
+    
