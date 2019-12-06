@@ -1,19 +1,18 @@
 pipeline {
     agent any
     environment {
-        DEPLOY_TO_TST       = 'TRUE'
-        GITORGNAME          = 'ANSI'
-        GITREPONAME         = 'ISO30500'
+        GITORGNAME          = 'jchupick'
+        GITREPONAME         = 'TESTPROJ'
         GITBRANCH           = 'master'
-        DISPLAYNAME         = 'ISO30500'
-        NEXUS_REPONAME      = 'ISO30500'
-        JIRAPROJECTKEY      = 'ISO30500'
+        DISPLAYNAME         = 'TESTPROJ'
+        NEXUS_REPONAME      = 'TESTPROJ'
+        JIRAPROJECTKEY      = 'TESTPROJ'
         BUILDROOTDIR        = 'BMGF'
         BUILDSLNFILE        = 'BMGF'
         BUILDPROJDIR        = 'BMGFWeb'
         BUILDPROJFILEPREFIX = 'BMGFWeb'
         FULLCSPROJFILENAME  = "$BUILDROOTDIR\\$BUILDPROJDIR\\$BUILDPROJFILEPREFIX" + ".csproj"
-        GITHUBFULLURL       = "ssh://git@github.ansi.org/" + "$GITORGNAME/$GITREPONAME" + ".git"
+        GITHUBFULLURL       = "ssh://git@github.com/" + "$GITORGNAME/$GITREPONAME" + ".git"
         FULLVERSIONSCRIPT   = ".\\$BUILDROOTDIR\\CreateModifiedMSProjectFile.ps1"
         BATCMDOLDVERSION    = "@echo off & powershell $FULLVERSIONSCRIPT -filename $FULLCSPROJFILENAME -getversion"
         BATCMDNEWVERSION    = "@echo off & powershell $FULLVERSIONSCRIPT -filename $FULLCSPROJFILENAME -build increment -getversion"
@@ -48,7 +47,7 @@ pipeline {
                     git commit -m "Jenkins updating version to %BUILDVERSIONNEW% " %FULLCSPROJFILENAME%
                     '''
                
-                    bat('git push https://%GIT_USERNAME%:%GIT_PASSWORD%@github.ansi.org/%GITORGNAME%/%GITREPONAME%.git')
+                    bat('git push https://%GIT_USERNAME%:%GIT_PASSWORD%@github.com/%GITORGNAME%/%GITREPONAME%.git')
                 }
             }
         }
@@ -90,7 +89,7 @@ pipeline {
                     currentBuild.description += "Branch:  " + env.GITBRANCH       + "\n"
                     currentBuild.description += "Version: " + env.BUILDVERSIONNEW + "\n\n"
                     currentBuild.description += "</pre>\n"
-                    currentBuild.description += "JIRA Version Report: <a href=\"https://jira.ansi.org/projects/${JIRAPROJECTKEY}/versions/${env.newVersionId}\">${env.newVersionName}</a><br />\n"
+                    currentBuild.description += "JIRA Version Report: <a href=\"https://jira.jchupick.net/projects/${JIRAPROJECTKEY}/versions/${env.newVersionId}\">${env.newVersionName}</a><br />\n"
                     currentBuild.description += "<br />\n"
                     currentBuild.description += "JIRA Issue List: <br /><br />\n" + jirahtmlstring
                     currentBuild.description += "<br />\n"
@@ -166,7 +165,7 @@ pipeline {
         }
         stage('Nexus') {
             environment {
-                NEXUS_GROUPID         = "org.ansi.$NEXUS_REPONAME"
+                NEXUS_GROUPID         = "net.jchupick.$NEXUS_REPONAME"
                 NEXUS_UPLOAD_FILENAME = "$BUILDROOTDIR/$BUILDPROJDIR/$BUILDPROJFILEPREFIX" + ".zip"
             }
             steps {
@@ -178,7 +177,7 @@ pipeline {
                                                     ]],
                                         credentialsId: 'f6522133-c8cc-4e2f-a0cb-74bf10c688b4',
                                         groupId: "$NEXUS_GROUPID",
-                                        nexusUrl: 'nexusdev.ansi.org',
+                                        nexusUrl: 'nexusdev.jchupick.net',
                                         nexusVersion: 'nexus3',
                                         protocol: 'https',
                                         repository: "$NEXUS_REPONAME",
@@ -191,7 +190,7 @@ pipeline {
             }
             environment {
                 J_CURRENT_WEBSERVER = 'webutil-tst'
-                J_CURRENT_WEBSITE   = 'sanitation-tst'
+                J_CURRENT_WEBSITE   = 'testproj-tst'
                 J_CURRENT_WEBENV    = 'TST'
                 J_CURRENT_DEPLOY_DIR = 'c$\\applications'
             }
@@ -299,7 +298,7 @@ def createJIRAIssueLinkList(Set jiraissuesetparam) {
     jiraissuesetparam.each { jirakey ->
         try {
             def currentIssue  = jiraGetIssue idOrKey: jirakey
-            htmlreturnstring += "<a href=\"https://jira.ansi.org/browse/${jirakey}\">${jirakey}</a> - ${currentIssue.data.fields.summary}<br />\n"
+            htmlreturnstring += "<a href=\"https://jira.jchupick.net/browse/${jirakey}\">${jirakey}</a> - ${currentIssue.data.fields.summary}<br />\n"
         } catch (e) {
             echo "Exception in associateVerionToIssues(): ${e} :: ${jirakey}"
         }
