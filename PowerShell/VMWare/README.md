@@ -32,3 +32,11 @@ Get-HardDisk -Datastore $ds
 $vm | Get-HardDisk
 $ds | Get-HardDisk
 ```
+
+### Digging Deeper
+
+#### Get a vm object then get all of the Guest details:
+$vm = Get-VM -Name vm1
+$vm.Guest | Select *
+
+
