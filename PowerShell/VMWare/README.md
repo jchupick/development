@@ -3,8 +3,7 @@
 Install-Module VMware.VimAutomation.Core
 ```
 
-### 
-Getting past invalid server certificate
+### Getting past invalid server certificate
 
 ```
 Set-PowerCLIConfiguration -InvalidCertificateAction Prompt
