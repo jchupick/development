@@ -1,4 +1,4 @@
-## Initial Module Install
+### Initial Module Install
 ```
 Install-Module VMware.VimAutomation.Core
 ```
