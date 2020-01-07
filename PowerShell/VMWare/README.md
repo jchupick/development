@@ -1,3 +1,8 @@
+## Initial Module Install
+```
+Install-Module VMware.VimAutomation.Core
+```
+
 ### Basic Commands
 Make a connection to a VCenter instance
 ```
