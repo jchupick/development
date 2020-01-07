@@ -3,6 +3,13 @@
 Install-Module VMware.VimAutomation.Core
 ```
 
+### 
+Getting past invalid server certificate
+
+```
+Set-PowerCLIConfiguration -InvalidCertificateAction Prompt
+```
+
 ### Basic Commands
 Make a connection to a VCenter instance
 ```
