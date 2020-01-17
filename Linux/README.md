@@ -1,11 +1,13 @@
-Systemd primer:
-1.  you load the daemon script on the server (python, for exampleO)
-2.  you create a systemd service file in   /etc/systemd/system/
-        filename may contain an @ sign (which is the mechanism for referring to service instances)
+## Systemd and Services
+
+1. you load the daemon script on the server (python, for exampleO)
+2. you create a systemd service file in   /etc/systemd/system/
+   filename may contain an @ sign (which is the mechanism for referring to service instances)
         
-            Foo.service 
-            Foo@.service
-        This file contains a description, env variables, and startup command (ExecStart)
+    Foo.service 
+    Foo@.service
+
+    This file contains a description, env variables, and startup command (ExecStart)
 3.  When you start or enable it,  the SERVICE file (not the daemon script) is 
         cached by Systemd (you will need to know this later if you change the SERVICE file.
         You only need to clear the Systemd cache if you change the SERVICE, not the script).
