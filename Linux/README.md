@@ -28,8 +28,10 @@ Show list of all all services running
 systemctl | grep running
 ```
 Check a specific service:
-`systemctl status Foo`        (when there is no @)
-`systemctl status Foo@{1..3}`  (must provided desired instance numbers if there is an @ sign)
+```
+systemctl status Foo         # (when there is no @)
+systemctl status Foo@{1..3}  # (must provided desired instance numbers if there is an @ sign)
+```
 or:
 ```sh
 ps aux | grep FOO
@@ -41,9 +43,9 @@ This is merely a labor saving device for the command line.  It does not cache th
 Instance variable usage:
         
 ```sh
-systemctl [start|stop|enable|disable] alarm_callback_send_curl@1           Just instance 1
-systemctl [start|stop|enable|disable] alarm_callback_send_curl@{1,3}       Just instances 1 and 3
-systemctl [start|stop|enable|disable] alarm_callback_send_curl@{1..3}      All instances from 1 - 3
+systemctl [start|stop|enable|disable] alarm_callback_send_curl@1           # Just instance 1
+systemctl [start|stop|enable|disable] alarm_callback_send_curl@{1,3}       # Just instances 1 and 3
+systemctl [start|stop|enable|disable] alarm_callback_send_curl@{1..3}      # All instances from 1 - 3
 ```
 
 In the body of the text of the service file, Systemd provides %i as the instance variable.  This can be used in the description and (presumably) as an argument in the startup command:
