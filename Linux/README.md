@@ -20,11 +20,11 @@ Enable has one purpose:  To add it to the list of services to start at reboot.
 In order for Systemd to enable it, the service file must be cached so Systemd will do that but that is not the primary purpose of enable.  Starting the service will likewise cache the service file out of necessity, not as a primary or exclusive function.
 
 Show list of all enabled services:
-```
+```sh
 systemctl list-unit-files | grep enabled
 ````
 Show list of all all services running
-```
+```shell
 systemctl | grep running
 ```
 Check a specific service:
