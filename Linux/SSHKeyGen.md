@@ -2,4 +2,6 @@
 
   1. Generate Key:  
     ```ssh-keygen -t rsa -b 2048```
-  1. Upload
+    Indicate public/private keypair filename
+  1. Upload  
+    ```ssh-copy-id -i <private_keyfile_from_step_1> username@servername```
