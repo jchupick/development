@@ -1,0 +1,98 @@
+pipeline {
+    agent any
+    environment {
+        GITORGNAME      = 'affiliated'
+        GITHUBBASEURL   = "http://10.10.100.85/"
+        GITCREDENTIALS  = 'd78f0c67-29c0-47d6-aa78-2a4e463bd9aa'
+        GITREPONAME     = 'portal'
+        GITHUBFULLURL   = "${GITHUBBASEURL}${GITORGNAME}/${GITREPONAME}.git"
+        
+        SSH_CMD = "ssh -o StrictHostKeyChecking=no"
+    }
+    stages {
+        stage('Setup') {
+            steps {
+                script {
+                    if (env.Environment == 'Production') {
+                        env.GITBRANCH  = 'production'
+                        ServerAlias1   = 'Portal-01'
+                        ServerAlias2   = 'Portal-02'
+                        ENVTAGVALUE    = 'prod'
+                        PORTALLINKNAME = 'live'
+                    } else if (env.Environment == 'QA Beta') {
+                        env.GITBRANCH  = 'qa_beta'
+                        ServerAlias1   = 'UNJ-PortalQA1 (DPR QA1)'
+                        ServerAlias2   = 'UNJ-PortalQA2 (DPR QA2)'
+                        ENVTAGVALUE    = 'qa'
+                        PORTALLINKNAME = 'qa'
+                    } else if (env.Environment == 'UAT') {
+                        env.GITBRANCH  = env.Branch
+                        ServerAlias1   = 'UNJ-PortalQA1 (DPR QA1)'
+                        ServerAlias2   = 'UNJ-PortalQA2 (DPR QA2)'
+                        ENVTAGVALUE    = 'uat'
+                        PORTALLINKNAME = 'uat'
+                    }
+                    echo "Git branch is ${GITBRANCH}" 
+                    echo "Servers: ${ServerAlias1} and ${ServerAlias2}" 
+                    echo "EnvTag: ${ENVTAGVALUE}" 
+                    echo "Link Name: ${PORTALLINKNAME}" 
+                    if (((env.Environment == 'Production') || (env.Environment == 'QA Beta')) && env.Branch.trim() != '') {
+                        error("ERROR: Cannot specify branch if Environment is 'Production' or 'QA Beta' ")
+                    } 
+                }
+            }
+        }
+        stage('Git Pull') {
+            steps {
+                script {
+                    echo "Git branch is ${GITBRANCH}" 
+                    echo "Servers: ${ServerAlias1} and ${ServerAlias2}" 
+                    echo "EnvTag: ${ENVTAGVALUE}" 
+                    echo "Link Name: ${PORTALLINKNAME}" 
+                    echo "Branch: ${env.GITBRANCH}" 
+                }
+                git branch: env.GITBRANCH,
+                credentialsId: env.GITCREDENTIALS,
+                url: env.GITHUBFULLURL
+            }
+        }
+        stage('SSH Agent Test') {
+            steps {
+                sshagent(credentials: ['jenkins-ssh-key-pair']) {
+                    //sh "${SSH_CMD} 10.10.161.161 'uname -a & hostname' " 
+                    //sh "${SSH_CMD} 10.10.161.161 ls -l /var/www/builds/ "
+                    sh "${SSH_CMD} 10.10.161.162 'uname -a & hostname' "
+                    sh "${SSH_CMD} 10.10.161.162 ls -l /var/www/builds/ "
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sshagent(credentials: ['jenkins-ssh-key-pair']) {
+                    sh '''#!/bin/bash 
+                        ${SSH_CMD} 10.10.161.162 'mkdir -p /home/jenkins/build-01' 
+                        sftp -rp 10.10.161.162:/home/jenkins/build-01 <<< \$'put .' 
+                    '''
+                }
+            }
+        }
+        stage('Finalize') {
+            steps {
+                script {
+                    echo "Git branch is ${GITBRANCH}" 
+                    echo "Servers: ${ServerAlias1} and ${ServerAlias2}" 
+                    echo "EnvTag: ${ENVTAGVALUE}" 
+                    echo "Link Name: ${PORTALLINKNAME}" 
+                    echo "Branch: ${env.GITBRANCH}" 
+
+                    currentBuild.description  = ""
+                    currentBuild.description += "Git branch is ${GITBRANCH}\n"
+                    currentBuild.description += "Servers: ${ServerAlias1} and ${ServerAlias2}\n" 
+                    currentBuild.description += "EnvTag: ${ENVTAGVALUE}\n" 
+                    currentBuild.description += "Link Name: ${PORTALLINKNAME}\n" 
+                    currentBuild.description += "Branch: ${env.GITBRANCH}\n" 
+                }
+            }
+        }
+    }
+}
