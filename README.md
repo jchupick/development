@@ -13,4 +13,8 @@
 #### Linux
     curl wttr.in
     curl wttr.in/London
+
     curl ifconfig.co
+    curl ifconfig.me
+    curl icanhazip.com
+    curl www.tully.net/foo.php
