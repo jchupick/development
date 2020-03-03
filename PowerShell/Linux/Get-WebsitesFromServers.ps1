@@ -35,17 +35,17 @@
     .PARAMETER ConfigDir
     Config directory to look for .conf files.
     Common ones:
-        /etc/apache2/sites-enabled      (default)
+        /etc/apache2/sites-enabled          (default)
         /opt/bitnami/apps/wordpress/conf
 
     .EXAMPLE
     Get-WebsitesFromServers.ps1 WebServer1
 
     .EXAMPLE
-    Get-WebsitesFromServers.ps1 WebServer1,WebServer2 -ConfigDir "/opt/bitnami/apps/wordpress/conf
+    Get-WebsitesFromServers.ps1 WebServer1,WebServer2 -ConfigDir "/opt/bitnami/apps/wordpress/conf"
 
     .EXAMPLE
-    Get-WebsitesFromServers.ps1 WebServer1 | Select-Object Hostname,ServerName,ConfigFile,HostDef,DocumentRoot,IPs
+    Get-WebsitesFromServers.ps1 WebServer1 | Select-Object Hostname,ServerName,ConfigFile,HostDef,DocumentRoot,IPs | Format-Table
 
     .LINK
     https://docs.bitnami.com/general/apps/wordpress/
@@ -55,7 +55,7 @@
 
 
 param(
-    [Parameter(Mandatory=$True)][string[]]$Servers, 
+    [Parameter(Mandatory=$True)]$Servers, 
     [string]$ConfigDir = "/etc/apache2/sites-enabled" 
 )
 
@@ -77,17 +77,14 @@ function Parse-ApacheConfXml
         [String]$ConfigFilename 
     )
 
-    #$ConfFileDump = Get-Content $Filename
     $ConfFileDump = $FileLines
 
     $START_SECTION_REGEX = '^<(\w+)\s*([A-Za-z_0-9.:*"$/\\-]*)>$'
     $END_SECTION_REGEX   = '^<[/](\w+)>'
     
-    $inSubsection = $false
     $inSection    = $false
     $currentSectionName  = ""
     $currentSectionValue = ""
-    $currentSubSectionName = ""
     $NameValuesTempHash    = @{}
     
     foreach ($ConfFileLine in $ConfFileDump)
@@ -99,8 +96,11 @@ function Parse-ApacheConfXml
     
         if (($ConfFileLineTrimmed -match $START_SECTION_REGEX) -and (-not $inSection))
         {
-            $inSection = $true
             $currentSectionName  = $Matches[1]
+            if ($currentSectionName -ne 'VirtualHost') { Continue }
+
+            $inSection = $true
+
             $currentSectionValue = $Matches[2]
             Write-Verbose("Start a section ::: " + $currentSectionName + " ===> " + $currentSectionValue)
     
@@ -113,7 +113,7 @@ function Parse-ApacheConfXml
     
             Continue
         }
-        elseif ($ConfFileLineTrimmed -match $END_SECTION_REGEX)
+        elseif (($inSection) -and ($ConfFileLineTrimmed -match $END_SECTION_REGEX))
         {
             if ($Matches[1] -eq $currentSectionName)
             {
@@ -123,9 +123,10 @@ function Parse-ApacheConfXml
                 $NameValuesTempHash = @{}
     
                 $inSection = $false
-                $currentSectionName     = ""
+                $currentSectionName  = ""
                 $currentSectionValue = ""
     
+                # This is our output down the powershell pipe
                 $newObject
                 Continue
             }
@@ -133,38 +134,16 @@ function Parse-ApacheConfXml
         
         if ($inSection)
         {
-            if (($ConfFileLineTrimmed -match $START_SECTION_REGEX) -and (-not $inSubsection))
+            $namevalue = $ConfFileLineTrimmed -split '\s+', 2
+
+            $name = $namevalue[0] ; $value = $namevalue[1]
+
+            if ($name.Length -gt 0)
             {
-                $inSubsection = $true
-                $currentSubSectionName = $Matches[1]
-                Write-Verbose("Start a sub-section ===> " + $currentSubSectionName)
-                Continue
-            }
-            elseif ($ConfFileLineTrimmed -match $END_SECTION_REGEX)
-            {
-                if ($Matches[1] -eq $currentSubSectionName)
-                {
-                    $inSubsection = $false
-                    $currentSubSectionName = ""
-                    Write-Verbose("End a sub-section ===> "+ $currentSubSectionName)
-                    Continue
-                }
-            }
-    
-            # Gather the name-value pairs
-            if (-not $inSubsection)
-            {
-                $namevalue = $ConfFileLineTrimmed -split '\s+', 2
-    
-                $name = $namevalue[0] ; $value = $namevalue[1]
-    
-                if ($name.Length -gt 0)
-                {
-                    Write-Verbose("Name:Value pair: " + $name + " ===> " + $value)
-                    $existingvalue  = $NameValuesTempHash.$name
-                    $existingvalue += $value + " "
-                    $NameValuesTempHash.Set_Item($name, $existingvalue)
-                }
+                Write-Verbose("Name:Value pair: " + $name + " ===> " + $value)
+                $existingvalue  = $NameValuesTempHash.$name
+                $existingvalue += $value + " "
+                $NameValuesTempHash.Set_Item($name, $existingvalue)
             }
         }
     }
@@ -196,19 +175,18 @@ foreach ($ServerIter in $ServerArray)
     $IPList = $IPList -replace ".$"         # Chop off the last character
     Write-Verbose($IPList)
 
-    #$cmd = "ssh $ServerIter 'ls -lL --time-style=+%Y%m%d-%H%M%S' /etc/apache2/sites-enabled/ | tail -n+2"
     $cmd = "ssh $ServerIter 'ls -1L $ConfigDir' "
 
     Write-Verbose("==============================================")
     Write-Verbose($cmd)
     $SiteEnabledConfFiles = Invoke-Expression $cmd
 
-    #foreach ($ConfFileIter in $SiteEnabledConfFiles)
     foreach ($ConfFile in $SiteEnabledConfFiles)
     {
-        #$ConfFileDetails = $ConfFileIter -split '\s+'
-        #$ConfFile = $ConfFileDetails[6]
-        if ($ConfFile -notmatch '[.]conf$') { Continue }
+        if ($ConfFile -notmatch '[.]conf$') { Write-Verbose("Ignoring file: $ConfFile") ; Continue } 
+        Write-Verbose("==============================================")
+        Write-Verbose("Config file: $ConfFile")
+        Write-Verbose("==============================================")
 
         $conffilecatcmd = "ssh $ServerIter 'cat $ConfigDir/$ConfFile' "
         $ConfFileDump   = Invoke-Expression $conffilecatcmd
@@ -216,5 +194,3 @@ foreach ($ServerIter in $ServerArray)
         Parse-ApacheConfXml -FileLines $ConfFileDump $ServerIter $Hostname $IPList $ConfFile
     }
 }
-#$ConfFileEntries
-
