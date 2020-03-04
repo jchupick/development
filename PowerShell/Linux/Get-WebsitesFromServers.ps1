@@ -119,26 +119,7 @@ function Parse-ApacheConfXml
                 Write-Verbose("Incrementing for " + $currentSectionName + "   ===> " + $inXMLSection)
             }
             Continue
-
-            #if (-not $inPrimarySection)
-            #{
-            #    if ($currentSectionName -eq 'VirtualHost')
-            #    {
-            #        $inPrimarySection = $true
-            #    }
-            #    else { Continue }
-            #}
-            #else 
-            #{
-            #    if ($currentSectionName -ne 'VirtualHost')
-            #    {
-            #        $inXMLSection++
-            #        Write-Verbose("Incrementing for " + $currentSectionName + "   ===> " + $inXMLSection)
-            #        Continue
-            #    }
-            #}
         }
-        #elseif (($inPrimarySection) -and ($ConfFileLineTrimmed -match $END_SECTION_REGEX))
         elseif ($ConfFileLineTrimmed -match $END_SECTION_REGEX)
         {
             Write-Verbose("End a section ::: " + $Matches[1])
@@ -174,6 +155,7 @@ function Parse-ApacheConfXml
                 Write-Verbose("Name:Value pair: " + $name + " ===> " + $value)
                 $existingvalue  = $NameValuesTempHash.$name
                 $existingvalue += $value + " "
+                Write-Verbose("Name:Value pair: " + $name + " ===> " + $value)
                 $NameValuesTempHash.Set_Item($name, $existingvalue)
             }
         }
