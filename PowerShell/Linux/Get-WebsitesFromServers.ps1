@@ -79,13 +79,14 @@ function Parse-ApacheConfXml
 
     $ConfFileDump = $FileLines
 
-    $START_SECTION_REGEX = '^<(\w+)\s*([A-Za-z_0-9.:*"$/\\-]*)>$'
+    $START_SECTION_REGEX = '^<(\w+)\s*(.*?)>$'
     $END_SECTION_REGEX   = '^<[/](\w+)>'
     
-    $inSection    = $false
+    $inPrimarySection    = $false
+    $inXMLSection        = 0       # We don't care about other XML sections, we just need to know we are in one
     $currentSectionName  = ""
     $currentSectionValue = ""
-    $NameValuesTempHash    = @{}
+    $NameValuesTempHash  = @{}
     
     foreach ($ConfFileLine in $ConfFileDump)
     {
@@ -94,45 +95,75 @@ function Parse-ApacheConfXml
         if ($ConfFileLineTrimmed -match '^#')  { Continue }
         if ($ConfFileLineTrimmed.Length -eq 0) { Continue }
     
-        if (($ConfFileLineTrimmed -match $START_SECTION_REGEX) -and (-not $inSection))
+        if ($ConfFileLineTrimmed -match $START_SECTION_REGEX)
         {
-            $currentSectionName  = $Matches[1]
-            if ($currentSectionName -ne 'VirtualHost') { Continue }
-
-            $inSection = $true
-
-            $currentSectionValue = $Matches[2]
-            Write-Verbose("Start a section ::: " + $currentSectionName + " ===> " + $currentSectionValue)
-    
-            $NameValuesTempHash.Set_Item('SSHAlias',   $Server)
-            $NameValuesTempHash.Set_Item('Hostname',   $Hostname)
-            $NameValuesTempHash.Set_Item('IPs',        $IPs)
-            $NameValuesTempHash.Set_Item('ConfigFile', $ConfigFilename)
-            $NameValuesTempHash.Set_Item('HostType',   $currentSectionName)
-            $NameValuesTempHash.Set_Item('HostDef',    $currentSectionValue)
-    
-            Continue
-        }
-        elseif (($inSection) -and ($ConfFileLineTrimmed -match $END_SECTION_REGEX))
-        {
-            if ($Matches[1] -eq $currentSectionName)
+            $currentSectionName = $Matches[1]
+            Write-Verbose("Start a section ::: " + $currentSectionName)
+            
+            if ($currentSectionName -eq 'VirtualHost')
             {
-                Write-Verbose("End a section ::: " + $currentSectionName)
-    
+                $inPrimarySection = $true
+
+                $currentSectionValue = $Matches[2]
+        
+                $NameValuesTempHash.Set_Item('SSHAlias',   $Server)
+                $NameValuesTempHash.Set_Item('Hostname',   $Hostname)
+                $NameValuesTempHash.Set_Item('IPs',        $IPs)
+                $NameValuesTempHash.Set_Item('ConfigFile', $ConfigFilename)
+                $NameValuesTempHash.Set_Item('HostType',   $currentSectionName)
+                $NameValuesTempHash.Set_Item('HostDef',    $currentSectionValue)
+            }
+            else
+            {
+                $inXMLSection++
+                Write-Verbose("Incrementing for " + $currentSectionName + "   ===> " + $inXMLSection)
+            }
+            Continue
+
+            #if (-not $inPrimarySection)
+            #{
+            #    if ($currentSectionName -eq 'VirtualHost')
+            #    {
+            #        $inPrimarySection = $true
+            #    }
+            #    else { Continue }
+            #}
+            #else 
+            #{
+            #    if ($currentSectionName -ne 'VirtualHost')
+            #    {
+            #        $inXMLSection++
+            #        Write-Verbose("Incrementing for " + $currentSectionName + "   ===> " + $inXMLSection)
+            #        Continue
+            #    }
+            #}
+        }
+        #elseif (($inPrimarySection) -and ($ConfFileLineTrimmed -match $END_SECTION_REGEX))
+        elseif ($ConfFileLineTrimmed -match $END_SECTION_REGEX)
+        {
+            Write-Verbose("End a section ::: " + $Matches[1])
+
+            if ($Matches[1] -eq 'VirtualHost')
+            {
                 $newObject = New-Object PSObject -Property $NameValuesTempHash
                 $NameValuesTempHash = @{}
     
-                $inSection = $false
+                $inPrimarySection    = $false
                 $currentSectionName  = ""
                 $currentSectionValue = ""
     
                 # This is our output down the powershell pipe
                 $newObject
-                Continue
             }
+            else
+            {
+                $inXMLSection--
+                Write-Verbose("Decrementing for " + $currentSectionName + "   ===> " + $inXMLSection)
+            }
+            Continue
         }
         
-        if ($inSection)
+        if ($inPrimarySection -and ($inXMLSection -le 0))
         {
             $namevalue = $ConfFileLineTrimmed -split '\s+', 2
 
@@ -151,14 +182,15 @@ function Parse-ApacheConfXml
 
 foreach ($ServerIter in $ServerArray)
 {
-    # Get the Hostname and IPs
+    # Get the Hostname
+    Write-Verbose("==============================================")
     $cmd = "ssh $ServerIter `" hostname `" "
+    Write-Verbose($cmd)
     $Hostname = (Invoke-Expression $cmd)
-
+    # Get the IP(s)
     $IPList    = ""
     $IPRawList = @()
     $cmd = "ssh $ServerIter `" ip addr | grep -P '^\s*?inet\s' `" "
-    Write-Verbose("==============================================")
     Write-Verbose($cmd)
     $IPRawList = (Invoke-Expression $cmd)
 
@@ -173,7 +205,7 @@ foreach ($ServerIter in $ServerArray)
         }
     }
     $IPList = $IPList -replace ".$"         # Chop off the last character
-    Write-Verbose($IPList)
+    Write-Verbose("IPs parsed: $IPList")
 
     $cmd = "ssh $ServerIter 'ls -1L $ConfigDir' "
 
@@ -189,8 +221,10 @@ foreach ($ServerIter in $ServerArray)
         Write-Verbose("==============================================")
 
         $conffilecatcmd = "ssh $ServerIter 'cat $ConfigDir/$ConfFile' "
+        Write-Verbose("$conffilecatcmd")
         $ConfFileDump   = Invoke-Expression $conffilecatcmd
 
         Parse-ApacheConfXml -FileLines $ConfFileDump $ServerIter $Hostname $IPList $ConfFile
     }
 }
+
