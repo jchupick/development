@@ -155,7 +155,7 @@ function Parse-ApacheConfXml
                 Write-Verbose("Name:Value pair: " + $name + " ===> " + $value)
                 $existingvalue  = $NameValuesTempHash.$name
                 $existingvalue += $value + " "
-                Write-Verbose("Name:Value pair: " + $name + " ===> " + $value)
+                Write-Verbose("Setting in Hash: " + $name + " ===> " + $existingvalue)
                 $NameValuesTempHash.Set_Item($name, $existingvalue)
             }
         }
