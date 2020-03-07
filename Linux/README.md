@@ -1,3 +1,11 @@
+## Tips and Tricks
+
+```
+$ . h.sh | xargs -I % sh -c " echo %; ssh % 'ls -l /var/www/config' "
+```
+
+Where `h.sh` just dumps a list of SSH aliases as defined in `~/.ssh/config`
+
 ## Systemd and Services
 
 1. you load the daemon script on the server (python, for exampleO)
