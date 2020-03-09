@@ -1,0 +1,5 @@
+# No actual keys here.
+# This file only exists as it will be copied by rbash.create.sh
+#
+# You should have a valid authorized_key file in place of this dummy file 
+# prior to running rbash.create.sh
