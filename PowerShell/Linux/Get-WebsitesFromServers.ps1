@@ -60,7 +60,6 @@ param(
 )
 
 $ServerArray      = @()
-$ConfFileEntries  = @()
 
 $ServerArray += Write-Output $Servers
 
@@ -166,13 +165,13 @@ foreach ($ServerIter in $ServerArray)
 {
     # Get the Hostname
     Write-Verbose("==============================================")
-    $cmd = "ssh $ServerIter `" hostname `" "
+    $cmd = "ssh $ServerIter `"hostname`" "
     Write-Verbose($cmd)
     $Hostname = (Invoke-Expression $cmd)
     # Get the IP(s)
     $IPList    = ""
     $IPRawList = @()
-    $cmd = "ssh $ServerIter `" ip addr | grep -P '^\s*?inet\s' `" "
+    $cmd = "ssh $ServerIter `"ip addr | grep -P '^\s*?inet\s'`" "
     Write-Verbose($cmd)
     $IPRawList = (Invoke-Expression $cmd)
 
