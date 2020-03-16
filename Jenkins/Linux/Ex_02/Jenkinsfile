@@ -1,0 +1,118 @@
+pipeline {
+    agent any
+    environment {
+        ARTIFACTS_TO_KEEP   = 3
+
+        GITORGNAME      = 'application-development'
+        GITHUBBASEURL   = "http://10.10.100.85/"
+        GITCREDENTIALS  = 'd78f0c67-29c0-47d6-aa78-2a4e463bd9aa'
+
+        GITREPONAME     = 'integration-api'
+        GITREPONAME_A   = 'alarm'
+        GITREPONAME_W   = 'webhooks'
+
+        GITHUBFULLURL   = "${GITHUBBASEURL}${GITORGNAME}/${GITREPONAME}.git"
+        GITHUBFULLURL_A = "${GITHUBBASEURL}${GITORGNAME}/${GITREPONAME_A}.git"
+        GITHUBFULLURL_W = "${GITHUBBASEURL}${GITORGNAME}/${GITREPONAME_W}.git"
+
+        TARFILEPREFIX   = "Integration-API."
+        TARFILENAME     = "${TARFILEPREFIX}${BUILD_NUMBER}.tar.gz"
+        BASEDIR         = '.'
+
+        //SSHUSERNAME     = "admin"
+        //SSH_CMD         = "ssh -o StrictHostKeyChecking=no -l ${SSHUSERNAME}"
+        //TARFILEPREFIX   = "test"
+        //TARFILENAME     = "${TARFILEPREFIX}${BUILD_NUMBER}.tar.gz"
+        //BASEDIR         = '/var/www/html'
+    }
+    stages {
+        stage('Setup') {
+            steps {
+                script {
+                    if (env.Environment == 'Production') {
+                        env.GITBRANCH  = 'production'
+                        ENVTAGVALUE    = 'prod'
+                    } else if (env.Environment == 'QA Beta') {
+                        env.GITBRANCH  = 'qa_beta'
+                        ENVTAGVALUE    = 'qa'
+                    }
+                    echo "Git branch is ${GITBRANCH}" 
+                }
+            }
+        }
+        stage('Git Pull') {
+            steps {
+                git branch: env.GITBRANCH,
+                credentialsId: env.GITCREDENTIALS,
+                url: env.GITHUBFULLURL
+                
+                dir ('application/models/alarm') {
+                    git branch: env.GITBRANCH,
+                    credentialsId: env.GITCREDENTIALS,
+                    url: env.GITHUBFULLURL_A
+                }
+                dir ('application/modules/webhooks') {
+                    git branch: env.GITBRANCH,
+                    credentialsId: env.GITCREDENTIALS,
+                    url: env.GITHUBFULLURL_W
+                }
+            }
+        }
+        stage('Create Artifact') {
+            steps {
+                script {
+                    ARTIFACTS_RM_PARAM  = sh(returnStdout: true, script: 'echo $((${ARTIFACTS_TO_KEEP}+1))').trim()
+                    TAR_CMD = "tar -czf ${TARFILENAME} --exclude=${TARFILENAME} ."
+                    echo "Creating tar artifact ${TARFILENAME} for all files at ${BASEDIR}:"
+                    echo "Calling: ${TAR_CMD}"
+                    
+                    sh "touch ${TARFILENAME}"
+                    sh "${TAR_CMD}"
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                script {
+                    if (env.Environment == 'Production') {
+                        deploy(["10.10.105.26", "10.10.105.27"])
+                    } else if (env.Environment == 'QA Beta') {
+                        deploy(["10.10.105.201", "10.10.105.202"])
+                    }
+                    sh "mv -f ${TARFILENAME} /var/artifact/"
+                }
+            }
+        }
+        stage('Finalize') {
+            steps {
+                script {
+                    currentBuild.description  = "Artifact Filename: ${TARFILENAME}\n\n"
+
+                    echo "Delete all but last ${ARTIFACTS_TO_KEEP} artifact files on source and target servers:"
+
+                    currentBuild.description += "Environment Parameter: ${env.Environment}\n"
+                    currentBuild.description += "Environment Tag: ${ENVTAGVALUE}\n"
+                    currentBuild.description += "Branch: ${env.GITBRANCH}\n"
+                }
+            }
+        }
+    }
+}
+
+def deploy(list) {
+    for (int i = 0; i < list.size(); i++) {
+        try {
+            echo "Deploy on server: ${list[i]}"
+            
+            SCP_CMD = "scp -v -o StrictHostKeyChecking=no ${TARFILENAME} jenkins@${list[i]}:/home/jenkins"
+            echo "Calling: ${SCP_CMD}"
+
+            sshagent(credentials: ['jenkins-ssh-key-pair']) {
+                sh "${SCP_CMD} "
+            }
+        } catch (Exception e) {
+            echo "Stage failed, but we continue"
+        }
+    }
+}
+
