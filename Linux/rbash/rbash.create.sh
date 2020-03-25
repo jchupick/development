@@ -25,7 +25,7 @@ sudo ln -s /bin/cat /home/$USERTOADD/bin
 sudo ln -s /bin/grep /home/$USERTOADD/bin
 sudo ln -s /bin/less /home/$USERTOADD/bin
 sudo ln -s /bin/ls /home/$USERTOADD/bin
-sudo ln -s /bin/tail /home/$USERTOADD/bin
+sudo ln -s /usr/bin/tail /home/$USERTOADD/bin
 
 sudo chmod a+r /var/log/apache2
 sudo chmod a+x /var/log/apache2
