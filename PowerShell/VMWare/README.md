@@ -39,4 +39,7 @@ $ds | Get-HardDisk
 $vm = Get-VM -Name vm1
 $vm.Guest | Select *
 ```
-
+#### Get a list of all Snapshots and what VM they were created from
+```
+Get-VM | Get-Snapshot | Select-Object Name,@{l='Date';e={$_.Created}},VM,@{l='SizeGB';e={[math]::round($_.SizeGB, 2)}}
+```
