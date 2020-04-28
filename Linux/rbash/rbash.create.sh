@@ -1,13 +1,23 @@
+#!/bin/bash
+
+# In advance of running this script, copy the below 3 files to the desired server.
+# (They will be deleted upon completion)
+#
+# rbash.create.sh (this script)
+# rbash.authorized_keys
+# rbash.profile
+#
+
 USERTOADD='logrdr'
-USERPW='password123'
 
 sudo pwd
 
 sudo useradd -m $USERTOADD -s /bin/rbash
 
-# Echo out the pw here so we can cut/paste into the 'passwd' command 
+# Echo out the pw here so we can cut/paste into the 'passwd' command
 # and another window when prompted.
-echo $USERPW
+# LIz3Jyy8lC)z
+echo 'LIz3Jyy8lC)z'
 
 sudo passwd $USERTOADD
 
