@@ -3,8 +3,12 @@
 Install-Module VMware.VimAutomation.Core
 ```
 
-### Getting past invalid server certificate
+### Allow it to run
+```
+Set-ExecutionPolicy RemoteSigned
+```
 
+### Getting past invalid server certificate
 ```
 Set-PowerCLIConfiguration -InvalidCertificateAction Prompt
 ```
