@@ -9,7 +9,9 @@
     (curl wttr.in     -UserAgent curl).content
     (curl ifconfig.co -UserAgent curl).content
 #### Active Directory (AD)
+
 #### Python
+
 #### Linux
     curl wttr.in
     curl wttr.in/London
