@@ -13,8 +13,10 @@
 #### Linux
     curl wttr.in
     curl wttr.in/London
+    curl wttr.in/90210
 
     curl ifconfig.co
     curl ifconfig.me
     curl icanhazip.com
+    curl -s api.ipify.org?format=json
     curl www.tully.net/foo.php
