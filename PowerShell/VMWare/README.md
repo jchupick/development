@@ -50,5 +50,6 @@ Get-VM | Get-Snapshot | Select-Object Name,@{l='Date';e={$_.Created}},VM,@{l='Si
 
 ### Scripts in this Repo
 #### Get-VMDetail.ps1
+
 Wrapper to pull the most usefull info from at ```Get-VM``` call.
 You will need to have already made a connection to a VCenter instance for this to work.
