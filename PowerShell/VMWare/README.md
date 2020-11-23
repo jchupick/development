@@ -47,3 +47,8 @@ $vm.Guest | Select *
 ```
 Get-VM | Get-Snapshot | Select-Object Name,@{l='Date';e={$_.Created}},VM,@{l='SizeGB';e={[math]::round($_.SizeGB, 2)}}
 ```
+
+### Scripts in this Repo
+#### Get-VMDetail.ps1
+Wrapper to pull the most usefull info from at ```Get-VM``` call.
+You will need to have already made a connection to a VCenter instance for this to work.
