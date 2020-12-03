@@ -10,4 +10,5 @@
 
 ### Get a list of DBs on a Server
 (Don't fully qualify server name like "kwiecom.database.windows.net")
+
 `az sql db list --resource-group kwiecom --server kwiecom`
