@@ -1,6 +1,9 @@
 ### One-Time configure (following AZ CLI INstall)
 `az configure`
 
+### Login
+`az login -u jchupick@kwicommerce.onmicrosoft.com -p XXXXXXXX`
+If `-p` not supplied, you will get prompted
 
 ### SQL Server INfo
 `az sql server list`
