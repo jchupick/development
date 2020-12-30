@@ -7,11 +7,19 @@ Module is **ActiveDirectory**
 (NOTE: this is equivalent to using the **Turn Windows Features on or off** on the Control Panel) 
 
 ## Basic Commands
+
+### Find a Computer
     Get-ADComputer -Filter 'Name -like "edi*"' | Select-Object Name
 
 Same as above, except combine **-like** and **-notlike**, and also remove the **Name** heading from the output using **-ExpandProperty**, creating a plain array of strings.
 
     Get-ADComputer -Filter ('Name -like "prd*st-*" -and Name -notlike "prd*tst-*"') | Select-Object Name -ExpandProperty Name
+
+### Find a User
+    Get-ADUser -Filter 'Name -like "*miller*"'
+
+### Get Group Membership for User
+    Get-ADUser -Filter 'Name -like "*miller*"' | Get-ADPrincipalGroupMembership
 
 ### Find a Group
 
