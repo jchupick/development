@@ -6,8 +6,8 @@
     powershell (curl wttr.in     -UserAgent curl).content
     powershell (curl ifconfig.co -UserAgent curl).content
 #### Windows PowerShell
-    (curl wttr.in     -UserAgent curl).content
-    (curl ifconfig.co -UserAgent curl).content
+    (iwr wttr.in).content
+    (iwr ifconfig.co).content
 #### Active Directory (AD)
 
 #### Python
