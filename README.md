@@ -16,6 +16,7 @@
     curl wttr.in
     curl wttr.in/London
     curl wttr.in/90210
+    curl wttr.in/90210?u        # Farenheit
 
     curl ifconfig.co
     curl ifconfig.me
