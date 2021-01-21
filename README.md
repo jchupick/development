@@ -6,7 +6,7 @@
     powershell (curl wttr.in     -UserAgent curl).content
     powershell (curl ifconfig.co -UserAgent curl).content
 #### Windows PowerShell
-    (iwr wttr.in).content
+    (iwr wttr.in/?u).content
     (iwr ifconfig.co).content
 #### Active Directory (AD)
 
