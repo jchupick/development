@@ -1,18 +1,17 @@
 <#
     .SYNOPSIS
-    Put a synopsis here...
+    Get a list of servers by wrapping a MicroSoft AD PowerShell call
 
     .DESCRIPTION
-    Put a description here...
+    Wrapper to Get-ADComputer to find servers on a network.
+    This will also ping each server to return it's IP and include that in the results.
 
-    .PARAMETER 
+    Windows ActiveDirectory feature must be installed as a prerequsite for running this script
 
-    .PARAMETER 
+        Install-WindowsFeature -Name RSAT-AD-Tools
 
-    .EXAMPLE
-    
-    .LINK
-    http://dev.mysql.com/downloads/connector/net/
+    .PARAMETER SearchSring
+    Use as filter to Get-ADComputer. Implicit adding of wildcards to either side or string ( eg. 'prod' will send '*prod*' )
 #>
 
 [CmdletBinding()]
