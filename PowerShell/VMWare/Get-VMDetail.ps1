@@ -31,6 +31,7 @@ foreach ($vmitem in $vms)
         #IP          = $vmitem.Guest.IPAddress
         IP          = $ipCollection
         OS          = $vmitem.Guest.OSFullName
+        VMHost      = $vmitem.VMHost
     }
     if ($NoStream)
     {
