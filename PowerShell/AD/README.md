@@ -25,6 +25,10 @@ Same as above, except combine **-like** and **-notlike**, and also remove the **
 
     Get-ADGroup -Filter 'Name -like "*Jenkins*"'
 
+## Find a Group or Groups and Get Members of Those Groups
+
+    Get-ADGroup -Filter 'Name -like "*Cybage*"' | Get-ADGroupMember
+
 ## (A little more than) Basic Commands
 
 Query servers, filtering by \*tst\*, grabbing the IP address as well
