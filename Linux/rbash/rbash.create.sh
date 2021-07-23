@@ -12,7 +12,7 @@ USERTOADD='logrdr'
 
 sudo pwd
 
-sudo useradd -m $USERTOADD -s /bin/rbash
+sudo useradd -m -s /bin/rbash $USERTOADD
 
 # Echo out the pw here so we can cut/paste into the 'passwd' command
 # and another window when prompted.
