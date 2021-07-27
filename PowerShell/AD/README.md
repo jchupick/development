@@ -29,6 +29,12 @@ Same as above, except combine **-like** and **-notlike**, and also remove the **
 
     Get-ADGroup -Filter 'Name -like "*Cybage*"' | Get-ADGroupMember
 
+## Add a User to a Group
+
+    $usertoadd = Get-ADUser -Filter * | Where-Object {$_.Name -like "*first last*"}
+    $group = Get-ADGroup -Filter * | Where-Object { $_.Name -like "*SOME_GROUP*" }
+    Add-ADGroupMember -Identity $group -Members $usertoadd
+
 ## (A little more than) Basic Commands
 
 Query servers, filtering by \*tst\*, grabbing the IP address as well
