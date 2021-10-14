@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-10-12T20:38:39.973Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36" etag="l8JjWdeXcx9N7RYaNB6b" version="15.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-14T14:30:26.191Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36" etag="2wG--pUI6gQXuF7rV-kr" version="15.5.1" type="github">
   <diagram name="Page-1" id="2ca16b54-16f6-2749-3443-fa8db7711227">
-    <mxGraphModel dx="1338" dy="651" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1248" dy="688" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -31,13 +31,13 @@
         <mxCell id="2ed32ef02a7f4228-9" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;job_server_artifact_xref&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;job_server_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;artifact_id&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;perimeterSpacing=1;" parent="1" vertex="1">
           <mxGeometry x="800" y="340" width="180" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="2ed32ef02a7f4228-10" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;artifact&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;type&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;name&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;artifact_name&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;ansible_type_id&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
+        <mxCell id="2ed32ef02a7f4228-10" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;artifact&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;type&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;name&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;artifact_name&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;md5sum&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;ansible_type_id&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
           <mxGeometry x="820" y="560" width="180" height="125" as="geometry" />
         </mxCell>
         <mxCell id="2ed32ef02a7f4228-11" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;job_server&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;job_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;server_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;ansible_type_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;status&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
           <mxGeometry x="510" y="190" width="180" height="118" as="geometry" />
         </mxCell>
-        <mxCell id="JTdOuwzgHMhHWxrUyFqR-2" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;labelBackgroundColor=none;startArrow=none;endArrow=ERmany;fontFamily=Verdana;fontSize=12;align=left;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryDx=0;entryDy=0;startFill=0;endFill=0;endSize=12;" edge="1" parent="1" source="2ed32ef02a7f4228-1" target="2ed32ef02a7f4228-2">
+        <mxCell id="JTdOuwzgHMhHWxrUyFqR-2" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;labelBackgroundColor=none;startArrow=none;endArrow=ERmany;fontFamily=Verdana;fontSize=12;align=left;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryDx=0;entryDy=0;startFill=0;endFill=0;endSize=12;" parent="1" source="2ed32ef02a7f4228-1" target="2ed32ef02a7f4228-2" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="201.07999999999993" y="281.8589999999999" as="sourcePoint" />
             <mxPoint x="549" y="530" as="targetPoint" />
@@ -47,7 +47,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="JTdOuwzgHMhHWxrUyFqR-4" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;labelBackgroundColor=none;startArrow=none;endArrow=ERmany;fontFamily=Verdana;fontSize=12;align=left;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryDx=0;entryDy=0;startFill=0;endFill=0;endSize=12;" edge="1" parent="1" source="2ed32ef02a7f4228-1" target="2ed32ef02a7f4228-11">
+        <mxCell id="JTdOuwzgHMhHWxrUyFqR-4" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;labelBackgroundColor=none;startArrow=none;endArrow=ERmany;fontFamily=Verdana;fontSize=12;align=left;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryDx=0;entryDy=0;startFill=0;endFill=0;endSize=12;" parent="1" source="2ed32ef02a7f4228-1" target="2ed32ef02a7f4228-11" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="310" y="221" as="sourcePoint" />
             <mxPoint x="550" y="300" as="targetPoint" />
@@ -57,16 +57,16 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="JTdOuwzgHMhHWxrUyFqR-5" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;labelBackgroundColor=none;startArrow=none;endArrow=ERmany;fontFamily=Verdana;fontSize=12;align=left;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryDx=0;entryDy=0;startFill=0;endSize=12;endFill=0;" edge="1" parent="1" source="2ed32ef02a7f4228-11" target="2ed32ef02a7f4228-9">
+        <mxCell id="JTdOuwzgHMhHWxrUyFqR-5" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;labelBackgroundColor=none;startArrow=none;endArrow=ERmany;fontFamily=Verdana;fontSize=12;align=left;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryDx=0;entryDy=0;startFill=0;endSize=12;endFill=0;" parent="1" source="2ed32ef02a7f4228-11" target="2ed32ef02a7f4228-9" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="980" y="190" as="sourcePoint" />
             <mxPoint x="980" y="510" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="JTdOuwzgHMhHWxrUyFqR-6" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;ansible_type&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;name&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;description&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="1">
+        <mxCell id="JTdOuwzgHMhHWxrUyFqR-6" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;ansible_type&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;name&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;description&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
           <mxGeometry x="910" y="102" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="JTdOuwzgHMhHWxrUyFqR-7" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;labelBackgroundColor=none;startArrow=none;endArrow=none;fontFamily=Verdana;fontSize=12;align=left;exitX=0.456;exitY=-0.017;exitDx=0;exitDy=0;entryDx=0;entryDy=0;exitPerimeter=0;endFill=0;startFill=0;" edge="1" parent="1" source="2ed32ef02a7f4228-11" target="JTdOuwzgHMhHWxrUyFqR-6">
+        <mxCell id="JTdOuwzgHMhHWxrUyFqR-7" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;labelBackgroundColor=none;startArrow=none;endArrow=none;fontFamily=Verdana;fontSize=12;align=left;exitX=0.456;exitY=-0.017;exitDx=0;exitDy=0;entryDx=0;entryDy=0;exitPerimeter=0;endFill=0;startFill=0;" parent="1" source="2ed32ef02a7f4228-11" target="JTdOuwzgHMhHWxrUyFqR-6" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="750" y="199" as="sourcePoint" />
             <mxPoint x="880" y="315" as="targetPoint" />
@@ -75,13 +75,13 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="JTdOuwzgHMhHWxrUyFqR-8" style="edgeStyle=orthogonalEdgeStyle;html=1;labelBackgroundColor=none;startArrow=ERmany;endArrow=none;fontFamily=Verdana;fontSize=12;align=left;startFill=0;endSize=12;endFill=0;startSize=10;" edge="1" parent="1" target="2ed32ef02a7f4228-10">
+        <mxCell id="JTdOuwzgHMhHWxrUyFqR-8" style="edgeStyle=orthogonalEdgeStyle;html=1;labelBackgroundColor=none;startArrow=ERmany;endArrow=none;fontFamily=Verdana;fontSize=12;align=left;startFill=0;endSize=12;endFill=0;startSize=10;" parent="1" target="2ed32ef02a7f4228-10" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="880" y="410" as="sourcePoint" />
             <mxPoint x="950" y="546" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="JTdOuwzgHMhHWxrUyFqR-9" style="edgeStyle=orthogonalEdgeStyle;html=1;labelBackgroundColor=none;startArrow=none;endArrow=none;fontFamily=Verdana;fontSize=12;align=left;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endFill=0;startFill=0;" edge="1" parent="1" source="JTdOuwzgHMhHWxrUyFqR-6" target="2ed32ef02a7f4228-10">
+        <mxCell id="JTdOuwzgHMhHWxrUyFqR-9" style="edgeStyle=orthogonalEdgeStyle;html=1;labelBackgroundColor=none;startArrow=none;endArrow=none;fontFamily=Verdana;fontSize=12;align=left;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endFill=0;startFill=0;" parent="1" source="JTdOuwzgHMhHWxrUyFqR-6" target="2ed32ef02a7f4228-10" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="890" y="420" as="sourcePoint" />
             <mxPoint x="1050" y="400" as="targetPoint" />
