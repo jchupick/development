@@ -1,101 +1,103 @@
-<mxfile host="app.diagrams.net" modified="2021-10-14T16:34:03.610Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36" etag="FrYod7R8E-be91ZT09sQ" version="15.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2021-11-01T16:04:23.760Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="pM_tcApwYNFYAs6C7VN5" version="15.6.3" type="github">
   <diagram name="Page-1" id="2ca16b54-16f6-2749-3443-fa8db7711227">
-    <mxGraphModel dx="1422" dy="905" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1277" dy="752" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="2ed32ef02a7f4228-1" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;&lt;div style=&quot;box-sizing: border-box ; width: 180px ; padding: 2px&quot;&gt;job&lt;/div&gt;&lt;table cellpadding=&quot;2&quot; cellspacing=&quot;0&quot; style=&quot;font-size: 1em ; background-color: rgb(248 , 249 , 250) ; width: 180px&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;type&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;name&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;app_job_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;environment_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;br&gt;&lt;/td&gt;&lt;td&gt;params_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;jobstart&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;jobend&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;status&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;node&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;jira_id&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
-          <mxGeometry x="109" y="102" width="191" height="238" as="geometry" />
+        <mxCell id="2ed32ef02a7f4228-1" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;&lt;div style=&quot;box-sizing: border-box ; width: 180px ; padding: 2px&quot;&gt;job&lt;/div&gt;&lt;table cellpadding=&quot;2&quot; cellspacing=&quot;0&quot; style=&quot;font-size: 1em ; background-color: rgb(248 , 249 , 250) ; width: 180px&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;name&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;type&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;job_path&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;environment_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;jobstart&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;jobend&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;status&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;node&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;jira_id&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
+          <mxGeometry x="80" y="80" width="200" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="2ed32ef02a7f4228-2" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;job_params&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;name&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;value&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
-          <mxGeometry x="430" y="410" width="110" height="80" as="geometry" />
+        <mxCell id="2ed32ef02a7f4228-2" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;job_params&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;job_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;name&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;value&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
+          <mxGeometry x="440" y="160" width="110" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="2ed32ef02a7f4228-16" style="edgeStyle=orthogonalEdgeStyle;html=1;labelBackgroundColor=none;startArrow=none;endArrow=ERmany;fontFamily=Verdana;fontSize=12;align=left;endFill=0;endSize=12;startFill=0;startSize=12;targetPerimeterSpacing=0;" parent="1" source="2ed32ef02a7f4228-3" target="2ed32ef02a7f4228-4" edge="1">
+        <mxCell id="2ed32ef02a7f4228-16" style="edgeStyle=orthogonalEdgeStyle;html=1;labelBackgroundColor=none;startArrow=none;endArrow=none;fontFamily=Verdana;fontSize=12;align=left;endFill=0;endSize=12;startFill=0;startSize=12;targetPerimeterSpacing=0;" parent="1" source="2ed32ef02a7f4228-3" target="2ed32ef02a7f4228-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="2ed32ef02a7f4228-3" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;server&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;env_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;type&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;servername&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
-          <mxGeometry x="490" y="627.5" width="180" height="115" as="geometry" />
+          <mxGeometry x="490" y="720" width="180" height="115" as="geometry" />
         </mxCell>
         <mxCell id="2ed32ef02a7f4228-4" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;environment&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;name&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;ansible_name&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
-          <mxGeometry x="160" y="640" width="180" height="90" as="geometry" />
+          <mxGeometry x="80" y="732.5" width="200" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="2ed32ef02a7f4228-15" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.5;entryY=0;labelBackgroundColor=none;startArrow=none;endArrow=none;fontFamily=Verdana;fontSize=12;align=left;exitX=0.456;exitY=1.011;exitDx=0;exitDy=0;exitPerimeter=0;startFill=0;endFill=0;" parent="1" source="2ed32ef02a7f4228-1" target="2ed32ef02a7f4228-4" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="290" y="295" as="sourcePoint" />
-            <Array as="points">
-              <mxPoint x="196" y="420" />
-              <mxPoint x="250" y="420" />
-            </Array>
-          </mxGeometry>
+        <mxCell id="2ed32ef02a7f4228-9" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;job_server_artifact_xref&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;job_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;server_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;artifact_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;ansible_type_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;timestamp&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;status&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;perimeterSpacing=1;" parent="1" vertex="1">
+          <mxGeometry x="680" y="270" width="180" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="2ed32ef02a7f4228-9" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;job_server_artifact_xref&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;job_server_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;artifact_id&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;perimeterSpacing=1;" parent="1" vertex="1">
-          <mxGeometry x="800" y="340" width="180" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="2ed32ef02a7f4228-10" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;artifact&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;type&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;name&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;artifact_name&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;deploy_filename&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;destination&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;ansible_type_id&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
+        <mxCell id="2ed32ef02a7f4228-10" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;artifact&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;type&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;name&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;artifact_name&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;deploy_filename&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;destination&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;identifier&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;ansible_type_id&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
           <mxGeometry x="820" y="560" width="180" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="2ed32ef02a7f4228-11" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;job_server&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;job_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;server_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;ansible_type_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;status&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
-          <mxGeometry x="510" y="190" width="180" height="118" as="geometry" />
-        </mxCell>
-        <mxCell id="JTdOuwzgHMhHWxrUyFqR-2" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;labelBackgroundColor=none;startArrow=none;endArrow=ERmany;fontFamily=Verdana;fontSize=12;align=left;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryDx=0;entryDy=0;startFill=0;endFill=0;endSize=12;" edge="1" parent="1" source="2ed32ef02a7f4228-1" target="2ed32ef02a7f4228-2">
+        <mxCell id="JTdOuwzgHMhHWxrUyFqR-4" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0.456;entryY=-0.033;labelBackgroundColor=none;startArrow=none;endArrow=none;fontFamily=Verdana;fontSize=12;align=left;entryDx=0;entryDy=0;startFill=0;endFill=0;endSize=12;entryPerimeter=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" parent="1" source="2ed32ef02a7f4228-1" target="2ed32ef02a7f4228-9" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="201.07999999999993" y="281.8589999999999" as="sourcePoint" />
-            <mxPoint x="549" y="530" as="targetPoint" />
+            <mxPoint x="360" y="120" as="sourcePoint" />
+            <mxPoint x="510" y="249" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="370" y="221" />
-              <mxPoint x="370" y="450" />
+              <mxPoint x="762" y="130" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="JTdOuwzgHMhHWxrUyFqR-4" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;labelBackgroundColor=none;startArrow=none;endArrow=ERmany;fontFamily=Verdana;fontSize=12;align=left;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryDx=0;entryDy=0;startFill=0;endFill=0;endSize=12;" edge="1" parent="1" source="2ed32ef02a7f4228-1" target="2ed32ef02a7f4228-11">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="310" y="221" as="sourcePoint" />
-            <mxPoint x="550" y="300" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="440" y="162" />
-              <mxPoint x="440" y="249" />
-            </Array>
-          </mxGeometry>
+        <mxCell id="JTdOuwzgHMhHWxrUyFqR-6" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;ansible_type&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;name&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;description&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
+          <mxGeometry x="940" y="102" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="JTdOuwzgHMhHWxrUyFqR-5" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;labelBackgroundColor=none;startArrow=none;endArrow=ERmany;fontFamily=Verdana;fontSize=12;align=left;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryDx=0;entryDy=0;startFill=0;endSize=12;endFill=0;" edge="1" parent="1" source="2ed32ef02a7f4228-11" target="2ed32ef02a7f4228-9">
+        <mxCell id="JTdOuwzgHMhHWxrUyFqR-7" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;labelBackgroundColor=none;startArrow=none;endArrow=none;fontFamily=Verdana;fontSize=12;align=left;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryDx=0;entryDy=0;endFill=0;startFill=0;" parent="1" source="2ed32ef02a7f4228-9" target="JTdOuwzgHMhHWxrUyFqR-6" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="980" y="190" as="sourcePoint" />
-            <mxPoint x="980" y="510" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="JTdOuwzgHMhHWxrUyFqR-6" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;ansible_type&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;name&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;description&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="1">
-          <mxGeometry x="910" y="102" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="JTdOuwzgHMhHWxrUyFqR-7" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;labelBackgroundColor=none;startArrow=none;endArrow=none;fontFamily=Verdana;fontSize=12;align=left;exitX=0.456;exitY=-0.017;exitDx=0;exitDy=0;entryDx=0;entryDy=0;exitPerimeter=0;endFill=0;startFill=0;" edge="1" parent="1" source="2ed32ef02a7f4228-11" target="JTdOuwzgHMhHWxrUyFqR-6">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="750" y="199" as="sourcePoint" />
+            <mxPoint x="592.0799999999999" y="187.99400000000003" as="sourcePoint" />
             <mxPoint x="880" y="315" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="592" y="142" />
+              <mxPoint x="900" y="345" />
+              <mxPoint x="900" y="142" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="JTdOuwzgHMhHWxrUyFqR-8" style="edgeStyle=orthogonalEdgeStyle;html=1;labelBackgroundColor=none;startArrow=ERmany;endArrow=none;fontFamily=Verdana;fontSize=12;align=left;startFill=0;endSize=12;endFill=0;startSize=10;" edge="1" parent="1" target="2ed32ef02a7f4228-10">
+        <mxCell id="JTdOuwzgHMhHWxrUyFqR-8" style="edgeStyle=orthogonalEdgeStyle;html=1;labelBackgroundColor=none;startArrow=ERmany;endArrow=none;fontFamily=Verdana;fontSize=12;align=left;startFill=0;endSize=12;endFill=0;startSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" target="2ed32ef02a7f4228-10" edge="1" source="2ed32ef02a7f4228-9">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="880" y="410" as="sourcePoint" />
             <mxPoint x="950" y="546" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="JTdOuwzgHMhHWxrUyFqR-9" style="edgeStyle=orthogonalEdgeStyle;html=1;labelBackgroundColor=none;startArrow=none;endArrow=none;fontFamily=Verdana;fontSize=12;align=left;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endFill=0;startFill=0;" edge="1" parent="1" source="JTdOuwzgHMhHWxrUyFqR-6" target="2ed32ef02a7f4228-10">
+        <mxCell id="JTdOuwzgHMhHWxrUyFqR-9" style="edgeStyle=orthogonalEdgeStyle;html=1;labelBackgroundColor=none;startArrow=none;endArrow=none;fontFamily=Verdana;fontSize=12;align=left;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endFill=0;startFill=0;" parent="1" source="JTdOuwzgHMhHWxrUyFqR-6" target="2ed32ef02a7f4228-10" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="890" y="420" as="sourcePoint" />
             <mxPoint x="1050" y="400" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="970" y="290" />
+              <mxPoint x="1000" y="290" />
               <mxPoint x="1050" y="290" />
-              <mxPoint x="1050" y="623" />
+              <mxPoint x="1050" y="640" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="JTdOuwzgHMhHWxrUyFqR-11" style="edgeStyle=orthogonalEdgeStyle;html=1;labelBackgroundColor=none;startArrow=none;endArrow=none;fontFamily=Verdana;fontSize=12;align=left;endFill=0;endSize=12;startFill=0;startSize=12;targetPerimeterSpacing=0;exitX=0.389;exitY=0.992;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2ed32ef02a7f4228-11" target="2ed32ef02a7f4228-3">
+        <mxCell id="JTdOuwzgHMhHWxrUyFqR-11" style="edgeStyle=orthogonalEdgeStyle;html=1;labelBackgroundColor=none;startArrow=none;endArrow=none;fontFamily=Verdana;fontSize=12;align=left;endFill=0;endSize=12;startFill=0;startSize=12;targetPerimeterSpacing=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="2ed32ef02a7f4228-9" target="2ed32ef02a7f4228-3" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="490" y="695" as="sourcePoint" />
+            <mxPoint x="580.02" y="307.05600000000004" as="sourcePoint" />
             <mxPoint x="350" y="695" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MQdoLtBGpAU0KX3yxUAk-1" style="edgeStyle=orthogonalEdgeStyle;html=1;labelBackgroundColor=none;startArrow=none;endArrow=none;fontFamily=Verdana;fontSize=12;align=left;endFill=0;endSize=12;startFill=0;startSize=12;targetPerimeterSpacing=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2ed32ef02a7f4228-1" target="2ed32ef02a7f4228-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="689" y="355" as="sourcePoint" />
+            <mxPoint x="590" y="637.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MQdoLtBGpAU0KX3yxUAk-3" value="" style="endArrow=none;html=1;rounded=0;exitX=1.005;exitY=0.59;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2ed32ef02a7f4228-1" target="2ed32ef02a7f4228-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="230" as="sourcePoint" />
+            <mxPoint x="340" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MQdoLtBGpAU0KX3yxUAk-4" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;db_definition&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;dbname&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="260" y="601" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MQdoLtBGpAU0KX3yxUAk-6" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;job_server_artifact_db_xref&lt;br&gt;&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;job_server_artifact_xref_id&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;FK&lt;/td&gt;&lt;td&gt;db_definition_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;timestamp&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;status&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="240" y="400" width="240" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="MQdoLtBGpAU0KX3yxUAk-7" value="" style="endArrow=ERmany;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=none;startFill=0;endFill=0;strokeWidth=1;endSize=12;startSize=12;" edge="1" parent="1" source="MQdoLtBGpAU0KX3yxUAk-4" target="MQdoLtBGpAU0KX3yxUAk-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="510" as="sourcePoint" />
+            <mxPoint x="570" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MQdoLtBGpAU0KX3yxUAk-8" style="edgeStyle=orthogonalEdgeStyle;html=1;labelBackgroundColor=none;startArrow=none;endArrow=ERmany;fontFamily=Verdana;fontSize=12;align=left;endFill=0;endSize=12;startFill=0;startSize=12;targetPerimeterSpacing=0;exitX=-0.033;exitY=0.276;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="2ed32ef02a7f4228-9" target="MQdoLtBGpAU0KX3yxUAk-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="689" y="393" as="sourcePoint" />
+            <mxPoint x="590" y="730" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
