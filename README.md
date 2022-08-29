@@ -23,3 +23,4 @@
     curl icanhazip.com
     curl -s api.ipify.org?format=json
     curl www.tully.net/foo.php
+
